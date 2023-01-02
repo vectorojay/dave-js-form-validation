@@ -51,6 +51,7 @@ const validatePasswordLogin = () => {
     setError(passWord, "The password you entered is incorrect");
   } else if (passWordValue === passWordLogin) {
     setSuccess(passWord);
+    console.log("Successful");
   }
 };
 
@@ -58,6 +59,8 @@ const validateBoth = () => {
   if (eMail.value === emailIdentity && passWord.value === passWordLogin) {
     setSuccess(eMail);
     setSuccess(passWord);
-    alert("Success! You have been logged in!");
+    setTimeout(() => {
+      alert("Success! You have been logged in!");
+    }, 1000);
   }
 };
