@@ -4,6 +4,9 @@ const btn = document.querySelector("button");
 
 const emailIdentity = localStorage.getItem("email");
 const passWordLogin = localStorage.getItem("password");
+const userNameIdentity = localStorage.getItem("username");
+
+console.log(userNameIdentity);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,7 +20,7 @@ const setError = (element, message) => {
   const formControl = element.parentElement;
   const errorDisplay = formControl.querySelector("small");
 
-  errorDisplay.innerText = message;
+  errorDisplay.textContent = message;
   formControl.classList.add("error");
 };
 
@@ -60,7 +63,7 @@ const validateBoth = () => {
     setSuccess(eMail);
     setSuccess(passWord);
     setTimeout(() => {
-      alert("Success! You have been logged in!");
+      alert(`${userNameIdentity}, You have been logged in`);
     }, 1000);
   }
 };

@@ -137,10 +137,6 @@ const validateForm = () => {
     validateEmailInputs();
     validatePasswordInputs();
     validatePassword2Inputs();
-    // setTimeout(validateUsernameInputs, 3000);
-    // setTimeout(validateEmailInputs, 3000);
-    // setTimeout(validatePasswordInputs, 3000);
-    // setTimeout(validatePassword2Inputs, 3000);
 
     let isValid = true;
 
@@ -156,12 +152,6 @@ const validateForm = () => {
     if (isValid) {
       window.location.href = "http://127.0.0.1:5501/pages/login.html";
     }
-
-    // VALIDATING ON SUBMIT
-    // setTimeout(validateUsernameInputs, 3000);
-    // setTimeout(validateEmailInputs, 3000);
-    // setTimeout(validatePasswordInputs, 3000);
-    // setTimeout(validatePassword2Inputs, 3000);
   });
 
   // SETTING ERROR MESSAGES
@@ -206,7 +196,7 @@ const validateForm = () => {
       setError(eMail, "Email is required");
     } else if (!eMailValue.includes("@") && !eMailValue.includes(".")) {
       setError(eMail, "Enter a valid email address");
-    } else {
+    } else if (eMailValue.includes("@") && eMailValue.includes(".")) {
       setSuccess(eMail);
       localStorage.setItem("email", eMail.value);
     }
