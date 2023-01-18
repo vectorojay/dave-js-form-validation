@@ -104,7 +104,9 @@ const validateBoth = () => {
   ) {
     setSuccess(eMail);
     setSuccess(passWord);
-    return true;
+    setTimeout(() => {
+      alert(`${userNameIdentity}, You have been logged in`);
+    }, 1000);
   }
 };
 

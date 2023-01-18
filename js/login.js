@@ -22,13 +22,12 @@ form.addEventListener("submit", (e) => {
 
   validateEmailLogin();
   validatePasswordLogin();
-  const validated = validateBoth();
-  if (validated) {
-    console.log(validated);
-    setTimeout(() => {
-      alert(`${userNameIdentity}, You have been logged in`);
-    }, 1000);
-  }
+  validateBoth();
+  // const validated = validateBoth();
+  // if (validated) {
+  //   console.log(validated);
+
+  // }
 });
 
 // const setError = (element, message) => {
